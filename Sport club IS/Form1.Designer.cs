@@ -36,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.AddcoachPanel = new System.Windows.Forms.Panel();
+            this.CBdPicker = new System.Windows.Forms.DateTimePicker();
             this.AddCoachbtn = new System.Windows.Forms.Button();
             this.CLNameTxt = new System.Windows.Forms.TextBox();
             this.CSalaryTxt = new System.Windows.Forms.TextBox();
@@ -51,9 +52,20 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.CBdPicker = new System.Windows.Forms.DateTimePicker();
+            this.addTeamPanel = new System.Windows.Forms.Panel();
+            this.addTeam_btn = new System.Windows.Forms.Button();
+            this.coachID_cb = new System.Windows.Forms.ComboBox();
+            this.rank_txt = new System.Windows.Forms.TextBox();
+            this.sportName_cb = new System.Windows.Forms.ComboBox();
+            this.teamName_txt = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.InsertTraningPanel.SuspendLayout();
             this.AddcoachPanel.SuspendLayout();
+            this.addTeamPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // InsertTraningPanel
@@ -64,10 +76,9 @@
             this.InsertTraningPanel.Controls.Add(this.label3);
             this.InsertTraningPanel.Controls.Add(this.label2);
             this.InsertTraningPanel.Controls.Add(this.label1);
-            this.InsertTraningPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.InsertTraningPanel.Location = new System.Drawing.Point(0, 0);
+            this.InsertTraningPanel.Location = new System.Drawing.Point(12, 12);
             this.InsertTraningPanel.Name = "InsertTraningPanel";
-            this.InsertTraningPanel.Size = new System.Drawing.Size(800, 450);
+            this.InsertTraningPanel.Size = new System.Drawing.Size(620, 382);
             this.InsertTraningPanel.TabIndex = 0;
             this.InsertTraningPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.InsertTraningPanel_Paint);
             // 
@@ -93,7 +104,6 @@
             this.DateAddTraningPicker.Size = new System.Drawing.Size(200, 22);
             this.DateAddTraningPicker.TabIndex = 5;
             this.DateAddTraningPicker.Value = new System.DateTime(2021, 6, 10, 0, 0, 0, 0);
-            this.DateAddTraningPicker.ValueChanged += new System.EventHandler(this.DateAddTraningPicker_ValueChanged);
             // 
             // AddSportNameTxt
             // 
@@ -147,12 +157,23 @@
             this.AddcoachPanel.Controls.Add(this.label6);
             this.AddcoachPanel.Controls.Add(this.label5);
             this.AddcoachPanel.Controls.Add(this.label4);
-            this.AddcoachPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddcoachPanel.Location = new System.Drawing.Point(0, 0);
+            this.AddcoachPanel.Location = new System.Drawing.Point(12, 12);
             this.AddcoachPanel.Name = "AddcoachPanel";
-            this.AddcoachPanel.Size = new System.Drawing.Size(800, 450);
+            this.AddcoachPanel.Size = new System.Drawing.Size(684, 450);
             this.AddcoachPanel.TabIndex = 7;
-            this.AddcoachPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.AddcoachPanel_Paint);
+            // 
+            // CBdPicker
+            // 
+            this.CBdPicker.Checked = false;
+            this.CBdPicker.CustomFormat = "dd/MM/yyyy";
+            this.CBdPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.CBdPicker.Location = new System.Drawing.Point(434, 305);
+            this.CBdPicker.MaxDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.CBdPicker.MinDate = new System.DateTime(1980, 6, 10, 0, 0, 0, 0);
+            this.CBdPicker.Name = "CBdPicker";
+            this.CBdPicker.Size = new System.Drawing.Size(200, 22);
+            this.CBdPicker.TabIndex = 18;
+            this.CBdPicker.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // AddCoachbtn
             // 
@@ -177,7 +198,6 @@
             this.CSalaryTxt.Name = "CSalaryTxt";
             this.CSalaryTxt.Size = new System.Drawing.Size(200, 22);
             this.CSalaryTxt.TabIndex = 14;
-            this.CSalaryTxt.TextChanged += new System.EventHandler(this.CSalaryTxt_TextChanged);
             this.CSalaryTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CSalaryTxt_KeyPress);
             // 
             // CAddressTxt
@@ -201,7 +221,6 @@
             this.CPhoneNumTxt.Name = "CPhoneNumTxt";
             this.CPhoneNumTxt.Size = new System.Drawing.Size(200, 22);
             this.CPhoneNumTxt.TabIndex = 10;
-            this.CPhoneNumTxt.TextChanged += new System.EventHandler(this.CPhoneNumTxt_TextChanged);
             this.CPhoneNumTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CPhoneNumTxt_KeyPress);
             // 
             // CFNameTxt
@@ -273,7 +292,6 @@
             this.label5.Size = new System.Drawing.Size(103, 17);
             this.label5.TabIndex = 1;
             this.label5.Text = "Phone Number";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -284,32 +302,128 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Add new Coach";
             // 
-            // CBdPicker
+            // addTeamPanel
             // 
-            this.CBdPicker.Checked = false;
-            this.CBdPicker.CustomFormat = "dd/MM/yyyy";
-            this.CBdPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.CBdPicker.Location = new System.Drawing.Point(434, 305);
-            this.CBdPicker.MaxDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.CBdPicker.MinDate = new System.DateTime(1980, 6, 10, 0, 0, 0, 0);
-            this.CBdPicker.Name = "CBdPicker";
-            this.CBdPicker.Size = new System.Drawing.Size(200, 22);
-            this.CBdPicker.TabIndex = 18;
-            this.CBdPicker.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.addTeamPanel.Controls.Add(this.addTeam_btn);
+            this.addTeamPanel.Controls.Add(this.coachID_cb);
+            this.addTeamPanel.Controls.Add(this.rank_txt);
+            this.addTeamPanel.Controls.Add(this.sportName_cb);
+            this.addTeamPanel.Controls.Add(this.teamName_txt);
+            this.addTeamPanel.Controls.Add(this.label16);
+            this.addTeamPanel.Controls.Add(this.label15);
+            this.addTeamPanel.Controls.Add(this.label14);
+            this.addTeamPanel.Controls.Add(this.label13);
+            this.addTeamPanel.Controls.Add(this.label10);
+            this.addTeamPanel.Location = new System.Drawing.Point(12, 12);
+            this.addTeamPanel.Name = "addTeamPanel";
+            this.addTeamPanel.Size = new System.Drawing.Size(698, 418);
+            this.addTeamPanel.TabIndex = 20;
+            this.addTeamPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.addTeamPanel_Paint);
+            // 
+            // addTeam_btn
+            // 
+            this.addTeam_btn.Location = new System.Drawing.Point(300, 336);
+            this.addTeam_btn.Name = "addTeam_btn";
+            this.addTeam_btn.Size = new System.Drawing.Size(75, 23);
+            this.addTeam_btn.TabIndex = 9;
+            this.addTeam_btn.Text = "Add";
+            this.addTeam_btn.UseVisualStyleBackColor = true;
+            this.addTeam_btn.Click += new System.EventHandler(this.addTeam_btn_Click);
+            // 
+            // coachID_cb
+            // 
+            this.coachID_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.coachID_cb.FormattingEnabled = true;
+            this.coachID_cb.Location = new System.Drawing.Point(389, 264);
+            this.coachID_cb.Name = "coachID_cb";
+            this.coachID_cb.Size = new System.Drawing.Size(160, 24);
+            this.coachID_cb.TabIndex = 8;
+            // 
+            // rank_txt
+            // 
+            this.rank_txt.Location = new System.Drawing.Point(389, 216);
+            this.rank_txt.Name = "rank_txt";
+            this.rank_txt.Size = new System.Drawing.Size(160, 22);
+            this.rank_txt.TabIndex = 7;
+            this.rank_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rank_txt_KeyPress);
+            // 
+            // sportName_cb
+            // 
+            this.sportName_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sportName_cb.FormattingEnabled = true;
+            this.sportName_cb.Location = new System.Drawing.Point(389, 161);
+            this.sportName_cb.Name = "sportName_cb";
+            this.sportName_cb.Size = new System.Drawing.Size(160, 24);
+            this.sportName_cb.TabIndex = 6;
+            // 
+            // teamName_txt
+            // 
+            this.teamName_txt.Location = new System.Drawing.Point(389, 107);
+            this.teamName_txt.Name = "teamName_txt";
+            this.teamName_txt.Size = new System.Drawing.Size(160, 22);
+            this.teamName_txt.TabIndex = 5;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(91, 271);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(65, 17);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Coach ID";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(91, 221);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(41, 17);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "Rank";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(91, 166);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(83, 17);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "Sport Name";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(91, 107);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(85, 17);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Team Name";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(302, 30);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(73, 17);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Add Team";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.AddcoachPanel);
+            this.Controls.Add(this.addTeamPanel);
             this.Controls.Add(this.InsertTraningPanel);
+            this.Controls.Add(this.AddcoachPanel);
             this.Name = "Form1";
             this.Text = "Form1";
             this.InsertTraningPanel.ResumeLayout(false);
             this.InsertTraningPanel.PerformLayout();
             this.AddcoachPanel.ResumeLayout(false);
             this.AddcoachPanel.PerformLayout();
+            this.addTeamPanel.ResumeLayout(false);
+            this.addTeamPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -340,6 +454,17 @@
         private System.Windows.Forms.TextBox CPhoneNumTxt;
         private System.Windows.Forms.TextBox CFNameTxt;
         private System.Windows.Forms.DateTimePicker CBdPicker;
+        private System.Windows.Forms.Panel addTeamPanel;
+        private System.Windows.Forms.Button addTeam_btn;
+        private System.Windows.Forms.ComboBox coachID_cb;
+        private System.Windows.Forms.TextBox rank_txt;
+        private System.Windows.Forms.ComboBox sportName_cb;
+        private System.Windows.Forms.TextBox teamName_txt;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label10;
     }
 }
 

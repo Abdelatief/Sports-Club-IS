@@ -17,6 +17,8 @@ namespace Sport_club_IS
         OracleDataAdapter adapter;
         OracleCommandBuilder builder;
         DataSet ds = new DataSet();
+        string connstr = "Data Source=ORCL;User Id=hr;Password=hr;";
+        string cmdstr = "";
         public DMForm()
         {
             InitializeComponent();
@@ -24,19 +26,17 @@ namespace Sport_club_IS
 
         private void LoadInformation_btn_Click(object sender, EventArgs e)
         {
-            string connstr = "Data Source=ORCL;User Id=hr;Password=hr;";
-            string cmdstr = "";
+
             if (TrainingsInformationRB.Checked)
                 cmdstr = "select * from training";
             else if (TeamsInformationRB.Checked)
                 cmdstr = "select * from team";
             else if (competitionsInformationRB.Checked)
-                cmdstr = "select * from competition";
+                cmdstr = "select * from COMPETITION";
+               
             adapter = new OracleDataAdapter(cmdstr, connstr);
             ds = new DataSet();
             adapter.Fill(ds);
-            Informations_DGV.DataSource = null;
-            Informations_DGV.Rows.Clear();
             Informations_DGV.DataSource = ds.Tables[0];
         }
 
@@ -54,6 +54,22 @@ namespace Sport_club_IS
             Hide();
             Form1 form = new Form1();
             form.Show();
+        }
+
+        private void search_btn_Click(object sender, EventArgs e)
+        {
+            if (TrainingsInformationRB.Checked)
+                cmdstr = @"select * from training where Sport_Name = :name";
+            else if (TeamsInformationRB.Checked)
+                cmdstr = @"select * from team where Sport_Name = :name";
+            else if (competitionsInformationRB.Checked)
+                cmdstr = @"select * from competition where SportName = :name";
+            adapter = new OracleDataAdapter(cmdstr, connstr);
+            adapter.SelectCommand.Parameters.Add("name", sportName_txt.Text);
+            ds = new DataSet();
+            adapter.Fill(ds);
+            Informations_DGV.DataSource = ds.Tables[0];
+
         }
     }
 }

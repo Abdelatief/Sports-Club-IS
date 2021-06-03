@@ -37,6 +37,9 @@
             this.TeamsInformationRB = new System.Windows.Forms.RadioButton();
             this.TrainingsInformationRB = new System.Windows.Forms.RadioButton();
             this.back_btn = new System.Windows.Forms.Button();
+            this.sportName_txt = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.search_btn = new System.Windows.Forms.Button();
             this.UpdatePanal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Informations_DGV)).BeginInit();
             this.UpdateGB.SuspendLayout();
@@ -44,10 +47,12 @@
             // 
             // UpdatePanal
             // 
+            this.UpdatePanal.Controls.Add(this.search_btn);
+            this.UpdatePanal.Controls.Add(this.label1);
+            this.UpdatePanal.Controls.Add(this.sportName_txt);
             this.UpdatePanal.Controls.Add(this.back_btn);
             this.UpdatePanal.Controls.Add(this.save_btn);
             this.UpdatePanal.Controls.Add(this.Informations_DGV);
-            this.UpdatePanal.Controls.Add(this.LoadInformation_btn);
             this.UpdatePanal.Controls.Add(this.UpdateGB);
             this.UpdatePanal.Location = new System.Drawing.Point(45, 4);
             this.UpdatePanal.Name = "UpdatePanal";
@@ -77,7 +82,7 @@
             // 
             // LoadInformation_btn
             // 
-            this.LoadInformation_btn.Location = new System.Drawing.Point(282, 188);
+            this.LoadInformation_btn.Location = new System.Drawing.Point(52, 134);
             this.LoadInformation_btn.Name = "LoadInformation_btn";
             this.LoadInformation_btn.Size = new System.Drawing.Size(155, 28);
             this.LoadInformation_btn.TabIndex = 1;
@@ -90,9 +95,10 @@
             this.UpdateGB.Controls.Add(this.competitionsInformationRB);
             this.UpdateGB.Controls.Add(this.TeamsInformationRB);
             this.UpdateGB.Controls.Add(this.TrainingsInformationRB);
-            this.UpdateGB.Location = new System.Drawing.Point(237, 30);
+            this.UpdateGB.Controls.Add(this.LoadInformation_btn);
+            this.UpdateGB.Location = new System.Drawing.Point(33, 27);
             this.UpdateGB.Name = "UpdateGB";
-            this.UpdateGB.Size = new System.Drawing.Size(239, 143);
+            this.UpdateGB.Size = new System.Drawing.Size(266, 168);
             this.UpdateGB.TabIndex = 0;
             this.UpdateGB.TabStop = false;
             // 
@@ -138,6 +144,32 @@
             this.back_btn.UseVisualStyleBackColor = true;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
+            // sportName_txt
+            // 
+            this.sportName_txt.Location = new System.Drawing.Point(489, 87);
+            this.sportName_txt.Name = "sportName_txt";
+            this.sportName_txt.Size = new System.Drawing.Size(145, 22);
+            this.sportName_txt.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(400, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 17);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Sport Name";
+            // 
+            // search_btn
+            // 
+            this.search_btn.Location = new System.Drawing.Point(459, 161);
+            this.search_btn.Name = "search_btn";
+            this.search_btn.Size = new System.Drawing.Size(147, 28);
+            this.search_btn.TabIndex = 7;
+            this.search_btn.Text = "Search";
+            this.search_btn.UseVisualStyleBackColor = true;
+            this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
+            // 
             // DMForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -147,6 +179,7 @@
             this.Name = "DMForm";
             this.Text = "DMForm";
             this.UpdatePanal.ResumeLayout(false);
+            this.UpdatePanal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Informations_DGV)).EndInit();
             this.UpdateGB.ResumeLayout(false);
             this.UpdateGB.PerformLayout();
@@ -165,5 +198,8 @@
         private System.Windows.Forms.RadioButton TeamsInformationRB;
         private System.Windows.Forms.RadioButton TrainingsInformationRB;
         private System.Windows.Forms.Button back_btn;
+        private System.Windows.Forms.Button search_btn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox sportName_txt;
     }
 }

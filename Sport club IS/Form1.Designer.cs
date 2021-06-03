@@ -63,9 +63,12 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.choicesPanel = new System.Windows.Forms.Panel();
+            this.Update_btn = new System.Windows.Forms.Button();
             this.InsertTraningPanel.SuspendLayout();
             this.AddcoachPanel.SuspendLayout();
             this.addTeamPanel.SuspendLayout();
+            this.choicesPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // InsertTraningPanel
@@ -408,22 +411,42 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "Add Team";
             // 
+            // choicesPanel
+            // 
+            this.choicesPanel.Controls.Add(this.Update_btn);
+            this.choicesPanel.Location = new System.Drawing.Point(12, 12);
+            this.choicesPanel.Name = "choicesPanel";
+            this.choicesPanel.Size = new System.Drawing.Size(727, 577);
+            this.choicesPanel.TabIndex = 21;
+            // 
+            // Update_btn
+            // 
+            this.Update_btn.Location = new System.Drawing.Point(265, 30);
+            this.Update_btn.Name = "Update_btn";
+            this.Update_btn.Size = new System.Drawing.Size(172, 41);
+            this.Update_btn.TabIndex = 0;
+            this.Update_btn.Text = "Update Informations";
+            this.Update_btn.UseVisualStyleBackColor = true;
+            this.Update_btn.Click += new System.EventHandler(this.Update_btn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(790, 583);
+            this.Controls.Add(this.choicesPanel);
             this.Controls.Add(this.addTeamPanel);
             this.Controls.Add(this.InsertTraningPanel);
             this.Controls.Add(this.AddcoachPanel);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.InsertTraningPanel.ResumeLayout(false);
+             this.InsertTraningPanel.ResumeLayout(false);
             this.InsertTraningPanel.PerformLayout();
             this.AddcoachPanel.ResumeLayout(false);
             this.AddcoachPanel.PerformLayout();
             this.addTeamPanel.ResumeLayout(false);
             this.addTeamPanel.PerformLayout();
+            this.choicesPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -465,6 +488,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel choicesPanel;
+        private System.Windows.Forms.Button Update_btn;
     }
 }
 

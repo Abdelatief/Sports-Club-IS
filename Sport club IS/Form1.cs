@@ -207,5 +207,14 @@ namespace Sport_club_IS
             if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
                 e.Handled = true;
         }
+
+        private void Update_btn_Click(object sender, EventArgs e)
+        {
+            Hide();
+            DMForm form = new DMForm();
+            form.Show();
+        }
+
+      
     }
 }

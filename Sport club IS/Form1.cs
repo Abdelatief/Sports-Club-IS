@@ -17,20 +17,21 @@ namespace Sport_club_IS
         public Form1()
         {
             InitializeComponent();
-            InsertTraningPanel.Visible = false;
-            AddcoachPanel.Visible = false;
-            //addTeamPanel.Visible = false;
+            addTrainingPanel.Visible = false;
+            addcoachPanel.Visible = false;
+            addTeamPanel.Visible = false;
+            
            conn = new OracleConnection(ordb);
             conn.Open();
 
             // test
-            CFNameTxt.Text = "Mark";
-            CLNameTxt.Text = "Ruffalo";
-            CSalaryTxt.Text = "123";
-            CAddressTxt.Text = "new york";
-            CSportNameTxt.Text = "Handball";
-            // CBdPicker.Text = "22-04-1998";
-            CPhoneNumTxt.Text = "01225896684";
+            //CFNameTxt.Text = "Mark";
+            //CLNameTxt.Text = "Ruffalo";
+            //CSalaryTxt.Text = "123";
+            //CAddressTxt.Text = "new york";
+            //CSportNameTxt.Text = "Handball";
+            //// CBdPicker.Text = "22-04-1998";
+            //CPhoneNumTxt.Text = "01225896684";
 
         }
 
@@ -144,6 +145,7 @@ namespace Sport_club_IS
         private void AdminForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             conn.Dispose();
+            
         }
 
         private void addTeamPanel_Paint(object sender, PaintEventArgs e)
@@ -210,11 +212,47 @@ namespace Sport_club_IS
 
         private void Update_btn_Click(object sender, EventArgs e)
         {
-            Hide();
+             Hide();
+           // System.Windows.Forms.Application.Exit();
             DMForm form = new DMForm();
             form.Show();
         }
 
-      
+        private void newTeam_btn_Click(object sender, EventArgs e)
+        {
+            addTeamPanel.Visible = true;
+            choicesPanel.Visible = false;
+
+        }
+
+        private void AddTraining_btn_Click(object sender, EventArgs e)
+        {
+            addTrainingPanel.Visible = true;
+            choicesPanel.Visible = false;
+        }
+
+        private void AddCoach_btn_Click(object sender, EventArgs e)
+        {
+            addcoachPanel.Visible = true;
+            choicesPanel.Visible = false;
+        }
+
+        private void backFromTeamPanel_btn_Click(object sender, EventArgs e)
+        {
+            addTeamPanel.Visible = false;
+            choicesPanel.Visible = true;
+        }
+
+        private void backFromTrainingPanel_btn_Click(object sender, EventArgs e)
+        {
+            addTrainingPanel.Visible = false;
+            choicesPanel.Visible = true;
+        }
+
+        private void backFormNewCoachPanel_btn_Click(object sender, EventArgs e)
+        {
+            addcoachPanel.Visible = false;
+            choicesPanel.Visible = true;
+        }
     }
 }

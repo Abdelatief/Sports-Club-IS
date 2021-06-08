@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.addTrainingPanel = new System.Windows.Forms.Panel();
+            this.backFromTrainingPanel_btn = new System.Windows.Forms.Button();
             this.AddNewTraning = new System.Windows.Forms.Button();
             this.DateAddTraningPicker = new System.Windows.Forms.DateTimePicker();
             this.AddSportNameTxt = new System.Windows.Forms.TextBox();
@@ -36,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.addcoachPanel = new System.Windows.Forms.Panel();
+            this.backFormNewCoachPanel_btn = new System.Windows.Forms.Button();
             this.CBdPicker = new System.Windows.Forms.DateTimePicker();
             this.AddCoachbtn = new System.Windows.Forms.Button();
             this.CLNameTxt = new System.Windows.Forms.TextBox();
@@ -53,6 +55,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.addTeamPanel = new System.Windows.Forms.Panel();
+            this.backFromTeamPanel_btn = new System.Windows.Forms.Button();
             this.addTeam_btn = new System.Windows.Forms.Button();
             this.coachID_cb = new System.Windows.Forms.ComboBox();
             this.rank_txt = new System.Windows.Forms.TextBox();
@@ -68,13 +71,19 @@
             this.AddTraining_btn = new System.Windows.Forms.Button();
             this.newTeam_btn = new System.Windows.Forms.Button();
             this.Update_btn = new System.Windows.Forms.Button();
-            this.backFromTeamPanel_btn = new System.Windows.Forms.Button();
-            this.backFromTrainingPanel_btn = new System.Windows.Forms.Button();
-            this.backFormNewCoachPanel_btn = new System.Windows.Forms.Button();
+            this.CoachUpdatePanel = new System.Windows.Forms.Panel();
+            this.back_btn = new System.Windows.Forms.Button();
+            this.updatebtn = new System.Windows.Forms.Button();
+            this.confirmPass_txt = new System.Windows.Forms.TextBox();
+            this.coachPass_txt = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.coachProfilePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.addTrainingPanel.SuspendLayout();
             this.addcoachPanel.SuspendLayout();
             this.addTeamPanel.SuspendLayout();
             this.choicesPanel.SuspendLayout();
+            this.CoachUpdatePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // addTrainingPanel
@@ -91,6 +100,16 @@
             this.addTrainingPanel.Size = new System.Drawing.Size(681, 447);
             this.addTrainingPanel.TabIndex = 0;
             this.addTrainingPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.InsertTraningPanel_Paint);
+            // 
+            // backFromTrainingPanel_btn
+            // 
+            this.backFromTrainingPanel_btn.Location = new System.Drawing.Point(219, 268);
+            this.backFromTrainingPanel_btn.Name = "backFromTrainingPanel_btn";
+            this.backFromTrainingPanel_btn.Size = new System.Drawing.Size(75, 23);
+            this.backFromTrainingPanel_btn.TabIndex = 7;
+            this.backFromTrainingPanel_btn.Text = "Back";
+            this.backFromTrainingPanel_btn.UseVisualStyleBackColor = true;
+            this.backFromTrainingPanel_btn.Click += new System.EventHandler(this.backFromTrainingPanel_btn_Click);
             // 
             // AddNewTraning
             // 
@@ -172,6 +191,16 @@
             this.addcoachPanel.Name = "addcoachPanel";
             this.addcoachPanel.Size = new System.Drawing.Size(684, 450);
             this.addcoachPanel.TabIndex = 7;
+            // 
+            // backFormNewCoachPanel_btn
+            // 
+            this.backFormNewCoachPanel_btn.Location = new System.Drawing.Point(248, 400);
+            this.backFormNewCoachPanel_btn.Name = "backFormNewCoachPanel_btn";
+            this.backFormNewCoachPanel_btn.Size = new System.Drawing.Size(75, 23);
+            this.backFormNewCoachPanel_btn.TabIndex = 19;
+            this.backFormNewCoachPanel_btn.Text = "Back";
+            this.backFormNewCoachPanel_btn.UseVisualStyleBackColor = true;
+            this.backFormNewCoachPanel_btn.Click += new System.EventHandler(this.backFormNewCoachPanel_btn_Click);
             // 
             // CBdPicker
             // 
@@ -332,6 +361,16 @@
             this.addTeamPanel.TabIndex = 20;
             this.addTeamPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.addTeamPanel_Paint);
             // 
+            // backFromTeamPanel_btn
+            // 
+            this.backFromTeamPanel_btn.Location = new System.Drawing.Point(207, 328);
+            this.backFromTeamPanel_btn.Name = "backFromTeamPanel_btn";
+            this.backFromTeamPanel_btn.Size = new System.Drawing.Size(75, 23);
+            this.backFromTeamPanel_btn.TabIndex = 10;
+            this.backFromTeamPanel_btn.Text = "Back";
+            this.backFromTeamPanel_btn.UseVisualStyleBackColor = true;
+            this.backFromTeamPanel_btn.Click += new System.EventHandler(this.backFromTeamPanel_btn_Click);
+            // 
             // addTeam_btn
             // 
             this.addTeam_btn.Location = new System.Drawing.Point(362, 328);
@@ -471,41 +510,87 @@
             this.Update_btn.UseVisualStyleBackColor = true;
             this.Update_btn.Click += new System.EventHandler(this.Update_btn_Click);
             // 
-            // backFromTeamPanel_btn
+            // CoachUpdatePanel
             // 
-            this.backFromTeamPanel_btn.Location = new System.Drawing.Point(207, 328);
-            this.backFromTeamPanel_btn.Name = "backFromTeamPanel_btn";
-            this.backFromTeamPanel_btn.Size = new System.Drawing.Size(75, 23);
-            this.backFromTeamPanel_btn.TabIndex = 10;
-            this.backFromTeamPanel_btn.Text = "Back";
-            this.backFromTeamPanel_btn.UseVisualStyleBackColor = true;
-            this.backFromTeamPanel_btn.Click += new System.EventHandler(this.backFromTeamPanel_btn_Click);
+            this.CoachUpdatePanel.Controls.Add(this.back_btn);
+            this.CoachUpdatePanel.Controls.Add(this.updatebtn);
+            this.CoachUpdatePanel.Controls.Add(this.confirmPass_txt);
+            this.CoachUpdatePanel.Controls.Add(this.coachPass_txt);
+            this.CoachUpdatePanel.Controls.Add(this.label18);
+            this.CoachUpdatePanel.Controls.Add(this.label17);
+            this.CoachUpdatePanel.Location = new System.Drawing.Point(12, 12);
+            this.CoachUpdatePanel.Name = "CoachUpdatePanel";
+            this.CoachUpdatePanel.Size = new System.Drawing.Size(695, 461);
+            this.CoachUpdatePanel.TabIndex = 20;
             // 
-            // backFromTrainingPanel_btn
+            // back_btn
             // 
-            this.backFromTrainingPanel_btn.Location = new System.Drawing.Point(219, 268);
-            this.backFromTrainingPanel_btn.Name = "backFromTrainingPanel_btn";
-            this.backFromTrainingPanel_btn.Size = new System.Drawing.Size(75, 23);
-            this.backFromTrainingPanel_btn.TabIndex = 7;
-            this.backFromTrainingPanel_btn.Text = "Back";
-            this.backFromTrainingPanel_btn.UseVisualStyleBackColor = true;
-            this.backFromTrainingPanel_btn.Click += new System.EventHandler(this.backFromTrainingPanel_btn_Click);
+            this.back_btn.Location = new System.Drawing.Point(152, 302);
+            this.back_btn.Name = "back_btn";
+            this.back_btn.Size = new System.Drawing.Size(103, 25);
+            this.back_btn.TabIndex = 6;
+            this.back_btn.Text = "Back";
+            this.back_btn.UseVisualStyleBackColor = true;
+            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
-            // backFormNewCoachPanel_btn
+            // updatebtn
             // 
-            this.backFormNewCoachPanel_btn.Location = new System.Drawing.Point(248, 400);
-            this.backFormNewCoachPanel_btn.Name = "backFormNewCoachPanel_btn";
-            this.backFormNewCoachPanel_btn.Size = new System.Drawing.Size(75, 23);
-            this.backFormNewCoachPanel_btn.TabIndex = 19;
-            this.backFormNewCoachPanel_btn.Text = "Back";
-            this.backFormNewCoachPanel_btn.UseVisualStyleBackColor = true;
-            this.backFormNewCoachPanel_btn.Click += new System.EventHandler(this.backFormNewCoachPanel_btn_Click);
+            this.updatebtn.Location = new System.Drawing.Point(353, 302);
+            this.updatebtn.Name = "updatebtn";
+            this.updatebtn.Size = new System.Drawing.Size(107, 25);
+            this.updatebtn.TabIndex = 5;
+            this.updatebtn.Text = "Update";
+            this.updatebtn.UseVisualStyleBackColor = true;
+            this.updatebtn.Click += new System.EventHandler(this.updatebtn_Click);
+            // 
+            // confirmPass_txt
+            // 
+            this.confirmPass_txt.Location = new System.Drawing.Point(334, 199);
+            this.confirmPass_txt.Name = "confirmPass_txt";
+            this.confirmPass_txt.PasswordChar = '*';
+            this.confirmPass_txt.Size = new System.Drawing.Size(163, 22);
+            this.confirmPass_txt.TabIndex = 4;
+            // 
+            // coachPass_txt
+            // 
+            this.coachPass_txt.Location = new System.Drawing.Point(334, 119);
+            this.coachPass_txt.Name = "coachPass_txt";
+            this.coachPass_txt.PasswordChar = '*';
+            this.coachPass_txt.Size = new System.Drawing.Size(163, 22);
+            this.coachPass_txt.TabIndex = 3;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(105, 210);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(120, 17);
+            this.label18.TabIndex = 1;
+            this.label18.Text = "Confirm password";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(105, 124);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(69, 17);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Password";
+            // 
+            // coachProfilePanel
+            // 
+            this.coachProfilePanel.Location = new System.Drawing.Point(12, 12);
+            this.coachProfilePanel.Name = "coachProfilePanel";
+            this.coachProfilePanel.Size = new System.Drawing.Size(200, 100);
+            this.coachProfilePanel.TabIndex = 22;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 583);
+            this.Controls.Add(this.coachProfilePanel);
+            this.Controls.Add(this.CoachUpdatePanel);
             this.Controls.Add(this.addcoachPanel);
             this.Controls.Add(this.choicesPanel);
             this.Controls.Add(this.addTeamPanel);
@@ -519,6 +604,8 @@
             this.addTeamPanel.ResumeLayout(false);
             this.addTeamPanel.PerformLayout();
             this.choicesPanel.ResumeLayout(false);
+            this.CoachUpdatePanel.ResumeLayout(false);
+            this.CoachUpdatePanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -568,6 +655,14 @@
         private System.Windows.Forms.Button backFromTeamPanel_btn;
         private System.Windows.Forms.Button backFromTrainingPanel_btn;
         private System.Windows.Forms.Button backFormNewCoachPanel_btn;
+        private System.Windows.Forms.Panel CoachUpdatePanel;
+        private System.Windows.Forms.TextBox confirmPass_txt;
+        private System.Windows.Forms.TextBox coachPass_txt;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button back_btn;
+        private System.Windows.Forms.Button updatebtn;
+        private System.Windows.Forms.FlowLayoutPanel coachProfilePanel;
     }
 }
 

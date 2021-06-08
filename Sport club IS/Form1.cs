@@ -20,8 +20,9 @@ namespace Sport_club_IS
             addTrainingPanel.Visible = false;
             addcoachPanel.Visible = false;
             addTeamPanel.Visible = false;
-            
-           conn = new OracleConnection(ordb);
+            coachProfilePanel.Visible = false;
+            choicesPanel.Visible = false;
+          conn = new OracleConnection(ordb);
             conn.Open();
 
             // test
@@ -253,6 +254,43 @@ namespace Sport_club_IS
         {
             addcoachPanel.Visible = false;
             choicesPanel.Visible = true;
+        }
+
+        private void updatebtn_Click(object sender, EventArgs e)
+        {
+            if (coachPass_txt.Text == "" || confirmPass_txt.Text == "")
+            {
+                MessageBox.Show("Please complete data");
+            }
+            else if (coachPass_txt.Text != confirmPass_txt.Text)
+            {
+                MessageBox.Show("confirm password doesn't match password");
+            }
+            else
+            {
+               OracleCommand cmd = new OracleCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "update coach set COACHPASSWORD = :pass where CoachID = :id";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add("pass", coachPass_txt.Text);
+                //TODO::change 41 by login
+                cmd.Parameters.Add("id", 41);
+                int r = cmd.ExecuteNonQuery();
+                if (r != -1)
+                {
+                    MessageBox.Show("Updated");
+                    coachPass_txt.Text = "";
+                    confirmPass_txt.Text = "";
+                }
+
+            }
+
+        }
+
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+            coachProfilePanel.Visible = true;
+            CoachUpdatePanel.Visible = false;
         }
     }
 }

@@ -78,12 +78,21 @@
             this.coachPass_txt = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.coachProfilePanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.coachProfilePanel = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.TeamDGV = new System.Windows.Forms.DataGridView();
+            this.label20 = new System.Windows.Forms.Label();
+            this.trainingDates_DGV = new System.Windows.Forms.DataGridView();
+            this.backFromCoachprofile_btn = new System.Windows.Forms.Button();
+            this.coachOptions_Panel = new System.Windows.Forms.Panel();
             this.addTrainingPanel.SuspendLayout();
             this.addcoachPanel.SuspendLayout();
             this.addTeamPanel.SuspendLayout();
             this.choicesPanel.SuspendLayout();
             this.CoachUpdatePanel.SuspendLayout();
+            this.coachProfilePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TeamDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trainingDates_DGV)).BeginInit();
             this.SuspendLayout();
             // 
             // addTrainingPanel
@@ -579,22 +588,90 @@
             // 
             // coachProfilePanel
             // 
+            this.coachProfilePanel.Controls.Add(this.backFromCoachprofile_btn);
+            this.coachProfilePanel.Controls.Add(this.trainingDates_DGV);
+            this.coachProfilePanel.Controls.Add(this.label20);
+            this.coachProfilePanel.Controls.Add(this.TeamDGV);
+            this.coachProfilePanel.Controls.Add(this.label19);
             this.coachProfilePanel.Location = new System.Drawing.Point(12, 12);
             this.coachProfilePanel.Name = "coachProfilePanel";
-            this.coachProfilePanel.Size = new System.Drawing.Size(200, 100);
+            this.coachProfilePanel.Size = new System.Drawing.Size(698, 533);
             this.coachProfilePanel.TabIndex = 22;
+            this.coachProfilePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.coachProfilePanel_Paint);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(91, 37);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(178, 17);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "The teams you are ranking";
+            // 
+            // TeamDGV
+            // 
+            this.TeamDGV.AllowUserToAddRows = false;
+            this.TeamDGV.AllowUserToDeleteRows = false;
+            this.TeamDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TeamDGV.Location = new System.Drawing.Point(94, 79);
+            this.TeamDGV.Name = "TeamDGV";
+            this.TeamDGV.ReadOnly = true;
+            this.TeamDGV.RowHeadersWidth = 51;
+            this.TeamDGV.RowTemplate.Height = 24;
+            this.TeamDGV.Size = new System.Drawing.Size(515, 148);
+            this.TeamDGV.TabIndex = 1;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(91, 246);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(99, 17);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "Training dates";
+            // 
+            // trainingDates_DGV
+            // 
+            this.trainingDates_DGV.AllowUserToAddRows = false;
+            this.trainingDates_DGV.AllowUserToDeleteRows = false;
+            this.trainingDates_DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.trainingDates_DGV.Location = new System.Drawing.Point(94, 291);
+            this.trainingDates_DGV.Name = "trainingDates_DGV";
+            this.trainingDates_DGV.ReadOnly = true;
+            this.trainingDates_DGV.RowHeadersWidth = 51;
+            this.trainingDates_DGV.RowTemplate.Height = 24;
+            this.trainingDates_DGV.Size = new System.Drawing.Size(515, 148);
+            this.trainingDates_DGV.TabIndex = 3;
+            // 
+            // backFromCoachprofile_btn
+            // 
+            this.backFromCoachprofile_btn.Location = new System.Drawing.Point(94, 482);
+            this.backFromCoachprofile_btn.Name = "backFromCoachprofile_btn";
+            this.backFromCoachprofile_btn.Size = new System.Drawing.Size(116, 28);
+            this.backFromCoachprofile_btn.TabIndex = 4;
+            this.backFromCoachprofile_btn.Text = "Back";
+            this.backFromCoachprofile_btn.UseVisualStyleBackColor = true;
+            this.backFromCoachprofile_btn.Click += new System.EventHandler(this.backFromCoachprofile_btn_Click);
+            // 
+            // coachOptions_Panel
+            // 
+            this.coachOptions_Panel.Location = new System.Drawing.Point(12, 12);
+            this.coachOptions_Panel.Name = "coachOptions_Panel";
+            this.coachOptions_Panel.Size = new System.Drawing.Size(695, 533);
+            this.coachOptions_Panel.TabIndex = 5;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 583);
-            this.Controls.Add(this.coachProfilePanel);
             this.Controls.Add(this.CoachUpdatePanel);
             this.Controls.Add(this.addcoachPanel);
             this.Controls.Add(this.choicesPanel);
             this.Controls.Add(this.addTeamPanel);
             this.Controls.Add(this.addTrainingPanel);
+            this.Controls.Add(this.coachOptions_Panel);
+            this.Controls.Add(this.coachProfilePanel);
             this.Name = "Form1";
             this.Text = "Form1";
             this.addTrainingPanel.ResumeLayout(false);
@@ -606,6 +683,10 @@
             this.choicesPanel.ResumeLayout(false);
             this.CoachUpdatePanel.ResumeLayout(false);
             this.CoachUpdatePanel.PerformLayout();
+            this.coachProfilePanel.ResumeLayout(false);
+            this.coachProfilePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TeamDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trainingDates_DGV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -662,7 +743,13 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button back_btn;
         private System.Windows.Forms.Button updatebtn;
-        private System.Windows.Forms.FlowLayoutPanel coachProfilePanel;
+        private System.Windows.Forms.Panel coachProfilePanel;
+        private System.Windows.Forms.DataGridView TeamDGV;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.DataGridView trainingDates_DGV;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button backFromCoachprofile_btn;
+        private System.Windows.Forms.Panel coachOptions_Panel;
     }
 }
 

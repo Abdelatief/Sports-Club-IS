@@ -22,6 +22,8 @@ namespace Sport_club_IS
             addTeamPanel.Visible = false;
             coachProfilePanel.Visible = false;
             choicesPanel.Visible = false;
+            coachOptions_Panel.Visible = false;
+            CoachUpdatePanel.Visible = false;
           conn = new OracleConnection(ordb);
             conn.Open();
 
@@ -289,8 +291,42 @@ namespace Sport_club_IS
 
         private void back_btn_Click(object sender, EventArgs e)
         {
-            coachProfilePanel.Visible = true;
+            coachOptions_Panel.Visible = true;
             CoachUpdatePanel.Visible = false;
+        }
+
+        private void coachProfilePanel_Paint(object sender, PaintEventArgs e)
+        {
+            OracleCommand c = new OracleCommand();
+            c.Connection = conn;
+            //select * from training T inner join works_on as W on T.trainingid = W.trainingid inner join coach as c on c.coachid = W.coachid where w.coachid = :id
+             c.CommandText = "select * from Team where  CoachID = :id";
+           // c.CommandText = "SELECT DATES FROM training, coach, works_on WHERE COACH.coachid = WORKS_ON.coachid AND COACH.CoachID = :id";
+            c.CommandType = CommandType.Text;
+            //TODO::change 24 from login
+            c.Parameters.Add("id", 24);
+            OracleDataReader dr = c.ExecuteReader();
+            DataTable dataTable = new DataTable();
+            dataTable.Load(dr);
+            TeamDGV.DataSource = dataTable;
+            /********************************************/
+            OracleCommand c2 = new OracleCommand();
+            c2.Connection = conn;
+            c2.CommandText = "SELECT DATES FROM training, coach, works_on WHERE COACH.coachid = WORKS_ON.coachid AND COACH.CoachID = :id";
+            c2.CommandType = CommandType.Text;
+            //TODO::change 24 from login
+            c2.Parameters.Add("id", 25);
+            dr = c2.ExecuteReader();
+            dataTable = new DataTable();
+            dataTable.Load(dr);
+            trainingDates_DGV.DataSource = dataTable;
+            dr.Close();
+        }
+
+        private void backFromCoachprofile_btn_Click(object sender, EventArgs e)
+        {
+            coachOptions_Panel.Visible = true;
+            coachProfilePanel.Visible = false;
         }
     }
 }

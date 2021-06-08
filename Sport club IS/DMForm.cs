@@ -51,9 +51,8 @@ namespace Sport_club_IS
 
         private void back_btn_Click(object sender, EventArgs e)
         {
-            Hide();
-            Form1 form = new Form1();
-            form.Show();
+            Close();
+          
         }
 
         private void search_btn_Click(object sender, EventArgs e)

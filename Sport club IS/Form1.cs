@@ -13,16 +13,17 @@ namespace Sport_club_IS
 
         string ordb = "Data Source=ORCL;User Id=hr;Password=hr;";
         OracleConnection conn;
-
+        int userId = -1;
         public Form1()
         {
             InitializeComponent();
+            
             addTrainingPanel.Visible = false;
             addcoachPanel.Visible = false;
             addTeamPanel.Visible = false;
             coachProfilePanel.Visible = false;
             choicesPanel.Visible = false;
-           // coachOptions_Panel.Visible = false;
+            coachOptions_Panel.Visible = false;
             CoachUpdatePanel.Visible = false;
           conn = new OracleConnection(ordb);
             conn.Open();
@@ -215,10 +216,12 @@ namespace Sport_club_IS
 
         private void Update_btn_Click(object sender, EventArgs e)
         {
-             Hide();
+             
            // System.Windows.Forms.Application.Exit();
             DMForm form = new DMForm();
-            form.Show();
+            Hide();
+            form.ShowDialog();
+            Show();
         }
 
         private void newTeam_btn_Click(object sender, EventArgs e)
@@ -346,6 +349,74 @@ namespace Sport_club_IS
         private void logout_btn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void logIn_btn_Click(object sender, EventArgs e)
+        {
+            if (ID_txt.Text == "" || pass_txt.Text == "")
+                MessageBox.Show("please compelete data!");
+            else 
+            {
+
+                if (Admin_rb.Checked)
+                {
+                    if (ID_txt.Text == "admin" || pass_txt.Text == "admin")
+                    {
+                        choicesPanel.Visible = true;
+                        Login_Panel.Visible = false;
+                        ID_txt.Text = "";
+                        pass_txt.Text = "";
+                    }
+                }
+                else 
+                {
+                    string procedureName="";
+                   
+                    if (coach_rb.Checked)
+                        procedureName = "getcoachdata";
+                    else if(player_rb.Checked)
+                        procedureName = "getplayerdata";
+                    OracleCommand cmd = new OracleCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandText = procedureName;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("inputId", ID_txt.Text);
+                    cmd.Parameters.Add("pass", pass_txt.Text);
+                    cmd.Parameters.Add("outputID", OracleDbType.Int32, ParameterDirection.Output);
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+
+                        userId = Convert.ToInt32(cmd.Parameters["outputID"].Value.ToString());
+                    }
+                    catch
+                    {
+                        userId = -1;
+                    }
+                    if(userId == - 1)
+                        MessageBox.Show("Incorrect data");
+                    else
+                    {
+                        if (coach_rb.Checked)
+                        {
+                            coachOptions_Panel.Visible = true;
+                            Login_Panel.Visible = false;
+                        }
+                        else if(player_rb.Checked)
+                        {
+
+                        }
+                    }
+                }
+            }
+           
+        }
+
+        private void adminLogout_btn_Click(object sender, EventArgs e)
+        {
+            choicesPanel.Visible = false;
+            Login_Panel.Visible = true;
+            userId = -1;
         }
     }
 }

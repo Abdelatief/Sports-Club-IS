@@ -88,6 +88,17 @@
             this.coachProfile_btn = new System.Windows.Forms.Button();
             this.restPass_btn = new System.Windows.Forms.Button();
             this.logout_btn = new System.Windows.Forms.Button();
+            this.Login_Panel = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.ID_txt = new System.Windows.Forms.TextBox();
+            this.pass_txt = new System.Windows.Forms.TextBox();
+            this.logIn_btn = new System.Windows.Forms.Button();
+            this.adminLogout_btn = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Admin_rb = new System.Windows.Forms.RadioButton();
+            this.coach_rb = new System.Windows.Forms.RadioButton();
+            this.player_rb = new System.Windows.Forms.RadioButton();
             this.addTrainingPanel.SuspendLayout();
             this.addcoachPanel.SuspendLayout();
             this.addTeamPanel.SuspendLayout();
@@ -97,6 +108,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.trainingDates_DGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeamDGV)).BeginInit();
             this.coachOptions_Panel.SuspendLayout();
+            this.Login_Panel.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // addTrainingPanel
@@ -474,6 +487,7 @@
             // 
             // choicesPanel
             // 
+            this.choicesPanel.Controls.Add(this.adminLogout_btn);
             this.choicesPanel.Controls.Add(this.AddCoach_btn);
             this.choicesPanel.Controls.Add(this.AddTraining_btn);
             this.choicesPanel.Controls.Add(this.newTeam_btn);
@@ -485,7 +499,7 @@
             // 
             // AddCoach_btn
             // 
-            this.AddCoach_btn.Location = new System.Drawing.Point(273, 199);
+            this.AddCoach_btn.Location = new System.Drawing.Point(273, 210);
             this.AddCoach_btn.Name = "AddCoach_btn";
             this.AddCoach_btn.Size = new System.Drawing.Size(164, 39);
             this.AddCoach_btn.TabIndex = 3;
@@ -495,7 +509,7 @@
             // 
             // AddTraining_btn
             // 
-            this.AddTraining_btn.Location = new System.Drawing.Point(273, 126);
+            this.AddTraining_btn.Location = new System.Drawing.Point(273, 137);
             this.AddTraining_btn.Name = "AddTraining_btn";
             this.AddTraining_btn.Size = new System.Drawing.Size(164, 39);
             this.AddTraining_btn.TabIndex = 2;
@@ -515,7 +529,7 @@
             // 
             // Update_btn
             // 
-            this.Update_btn.Location = new System.Drawing.Point(273, 281);
+            this.Update_btn.Location = new System.Drawing.Point(273, 291);
             this.Update_btn.Name = "Update_btn";
             this.Update_btn.Size = new System.Drawing.Size(164, 41);
             this.Update_btn.TabIndex = 0;
@@ -540,7 +554,7 @@
             // 
             this.back_btn.Location = new System.Drawing.Point(152, 302);
             this.back_btn.Name = "back_btn";
-            this.back_btn.Size = new System.Drawing.Size(103, 25);
+            this.back_btn.Size = new System.Drawing.Size(115, 33);
             this.back_btn.TabIndex = 6;
             this.back_btn.Text = "Back";
             this.back_btn.UseVisualStyleBackColor = true;
@@ -548,9 +562,9 @@
             // 
             // updatebtn
             // 
-            this.updatebtn.Location = new System.Drawing.Point(353, 302);
+            this.updatebtn.Location = new System.Drawing.Point(353, 301);
             this.updatebtn.Name = "updatebtn";
-            this.updatebtn.Size = new System.Drawing.Size(107, 25);
+            this.updatebtn.Size = new System.Drawing.Size(117, 34);
             this.updatebtn.TabIndex = 5;
             this.updatebtn.Text = "Update";
             this.updatebtn.UseVisualStyleBackColor = true;
@@ -697,6 +711,115 @@
             this.logout_btn.UseVisualStyleBackColor = true;
             this.logout_btn.Click += new System.EventHandler(this.logout_btn_Click);
             // 
+            // Login_Panel
+            // 
+            this.Login_Panel.Controls.Add(this.groupBox1);
+            this.Login_Panel.Controls.Add(this.logIn_btn);
+            this.Login_Panel.Controls.Add(this.pass_txt);
+            this.Login_Panel.Controls.Add(this.ID_txt);
+            this.Login_Panel.Controls.Add(this.label22);
+            this.Login_Panel.Controls.Add(this.label21);
+            this.Login_Panel.Location = new System.Drawing.Point(12, 12);
+            this.Login_Panel.Name = "Login_Panel";
+            this.Login_Panel.Size = new System.Drawing.Size(695, 487);
+            this.Login_Panel.TabIndex = 11;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(139, 124);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(21, 17);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "ID";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(139, 229);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(69, 17);
+            this.label22.TabIndex = 1;
+            this.label22.Text = "Password";
+            // 
+            // ID_txt
+            // 
+            this.ID_txt.Location = new System.Drawing.Point(370, 118);
+            this.ID_txt.Name = "ID_txt";
+            this.ID_txt.Size = new System.Drawing.Size(139, 22);
+            this.ID_txt.TabIndex = 2;
+            // 
+            // pass_txt
+            // 
+            this.pass_txt.Location = new System.Drawing.Point(370, 221);
+            this.pass_txt.Name = "pass_txt";
+            this.pass_txt.PasswordChar = '*';
+            this.pass_txt.Size = new System.Drawing.Size(139, 22);
+            this.pass_txt.TabIndex = 3;
+            // 
+            // logIn_btn
+            // 
+            this.logIn_btn.Location = new System.Drawing.Point(272, 387);
+            this.logIn_btn.Name = "logIn_btn";
+            this.logIn_btn.Size = new System.Drawing.Size(103, 31);
+            this.logIn_btn.TabIndex = 4;
+            this.logIn_btn.Text = "Log In";
+            this.logIn_btn.UseVisualStyleBackColor = true;
+            this.logIn_btn.Click += new System.EventHandler(this.logIn_btn_Click);
+            // 
+            // adminLogout_btn
+            // 
+            this.adminLogout_btn.Location = new System.Drawing.Point(273, 370);
+            this.adminLogout_btn.Name = "adminLogout_btn";
+            this.adminLogout_btn.Size = new System.Drawing.Size(164, 41);
+            this.adminLogout_btn.TabIndex = 4;
+            this.adminLogout_btn.Text = "Log out";
+            this.adminLogout_btn.UseVisualStyleBackColor = true;
+            this.adminLogout_btn.Click += new System.EventHandler(this.adminLogout_btn_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.player_rb);
+            this.groupBox1.Controls.Add(this.coach_rb);
+            this.groupBox1.Controls.Add(this.Admin_rb);
+            this.groupBox1.Location = new System.Drawing.Point(142, 290);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(367, 49);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            // 
+            // Admin_rb
+            // 
+            this.Admin_rb.AutoSize = true;
+            this.Admin_rb.Checked = true;
+            this.Admin_rb.Location = new System.Drawing.Point(15, 16);
+            this.Admin_rb.Name = "Admin_rb";
+            this.Admin_rb.Size = new System.Drawing.Size(68, 21);
+            this.Admin_rb.TabIndex = 0;
+            this.Admin_rb.TabStop = true;
+            this.Admin_rb.Text = "Admin";
+            this.Admin_rb.UseVisualStyleBackColor = true;
+            // 
+            // coach_rb
+            // 
+            this.coach_rb.AutoSize = true;
+            this.coach_rb.Location = new System.Drawing.Point(130, 18);
+            this.coach_rb.Name = "coach_rb";
+            this.coach_rb.Size = new System.Drawing.Size(69, 21);
+            this.coach_rb.TabIndex = 1;
+            this.coach_rb.Text = "Coach";
+            this.coach_rb.UseVisualStyleBackColor = true;
+            // 
+            // player_rb
+            // 
+            this.player_rb.AutoSize = true;
+            this.player_rb.Location = new System.Drawing.Point(257, 18);
+            this.player_rb.Name = "player_rb";
+            this.player_rb.Size = new System.Drawing.Size(69, 21);
+            this.player_rb.TabIndex = 2;
+            this.player_rb.Text = "Player";
+            this.player_rb.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -707,10 +830,11 @@
             this.Controls.Add(this.CoachUpdatePanel);
             this.Controls.Add(this.addcoachPanel);
             this.Controls.Add(this.choicesPanel);
+            this.Controls.Add(this.Login_Panel);
             this.Controls.Add(this.addTeamPanel);
             this.Controls.Add(this.addTrainingPanel);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Sport Club Information System";
             this.addTrainingPanel.ResumeLayout(false);
             this.addTrainingPanel.PerformLayout();
             this.addcoachPanel.ResumeLayout(false);
@@ -725,6 +849,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.trainingDates_DGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeamDGV)).EndInit();
             this.coachOptions_Panel.ResumeLayout(false);
+            this.Login_Panel.ResumeLayout(false);
+            this.Login_Panel.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -791,6 +919,17 @@
         private System.Windows.Forms.Button coachProfile_btn;
         private System.Windows.Forms.Button logout_btn;
         private System.Windows.Forms.Button restPass_btn;
+        private System.Windows.Forms.Panel Login_Panel;
+        private System.Windows.Forms.Button logIn_btn;
+        private System.Windows.Forms.TextBox pass_txt;
+        private System.Windows.Forms.TextBox ID_txt;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button adminLogout_btn;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton player_rb;
+        private System.Windows.Forms.RadioButton coach_rb;
+        private System.Windows.Forms.RadioButton Admin_rb;
     }
 }
 

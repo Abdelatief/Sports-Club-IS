@@ -22,7 +22,7 @@ namespace Sport_club_IS
             addTeamPanel.Visible = false;
             coachProfilePanel.Visible = false;
             choicesPanel.Visible = false;
-            coachOptions_Panel.Visible = false;
+           // coachOptions_Panel.Visible = false;
             CoachUpdatePanel.Visible = false;
           conn = new OracleConnection(ordb);
             conn.Open();
@@ -327,6 +327,25 @@ namespace Sport_club_IS
         {
             coachOptions_Panel.Visible = true;
             coachProfilePanel.Visible = false;
+        }
+
+     
+
+        private void coachProfile_btn_Click(object sender, EventArgs e)
+        {
+            coachProfilePanel.Visible = true;
+            coachOptions_Panel.Visible = false;
+        }
+
+        private void restPass_btn_Click(object sender, EventArgs e)
+        {
+            coachOptions_Panel.Visible = false;
+            CoachUpdatePanel.Visible = true;
+        }
+
+        private void logout_btn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -70,5 +70,7 @@ namespace Sport_club_IS
             Informations_DGV.DataSource = ds.Tables[0];
 
         }
+
+      
     }
 }

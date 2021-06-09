@@ -25,6 +25,7 @@ namespace Sport_club_IS
             choicesPanel.Visible = false;
             coachOptions_Panel.Visible = false;
             CoachUpdatePanel.Visible = false;
+            //Login_Panel.Visible = false;
           conn = new OracleConnection(ordb);
             conn.Open();
 
@@ -95,8 +96,7 @@ namespace Sport_club_IS
                     OracleCommand cmd = new OracleCommand();
                     cmd.Connection = conn;
                     cmd.CommandText = "insert into COACH values (COACHID.nextval,:FirstName,:lastName,:coachPass,:salary,:address,:sportName,TO_DATE(:bd, 'dd/MM/yyyy'),:phoneNum)";
-                  //  cmd.CommandText = $"insert into COACH values (COACHID.nextval, '{CFNameTxt.Text}', '{CLNameTxt.Text}', '123', {float.Parse(CSalaryTxt.Text)}, '{CAddressTxt.Text}', '{CSportNameTxt.Text}', TO_DATE('{CBdPicker.Text}', 'dd/MM/yyyy'), '{CPhoneNumTxt.Text}')";
-                    cmd.Parameters.Add("FirstName", CFNameTxt.Text);
+                   cmd.Parameters.Add("FirstName", CFNameTxt.Text);
                     cmd.Parameters.Add("lastName", CLNameTxt.Text);
                     cmd.Parameters.Add("coachPass", "123");
                     cmd.Parameters.Add("salary", float.Parse(CSalaryTxt.Text));
@@ -168,17 +168,17 @@ namespace Sport_club_IS
                 sportName_cb.Items.Add(dr[0]);
             }
 
-              OracleCommand cmd2 = new OracleCommand();
-               cmd2.Connection = conn;
-               cmd2.CommandText = "GetCoachID";
-               cmd2.CommandType = CommandType.StoredProcedure;
-               cmd2.Parameters.Add("coach_id", OracleDbType.RefCursor, ParameterDirection.Output);
-               dr = cmd2.ExecuteReader();
-               while (dr.Read())
-               {
-                   coachID_cb.Items.Add(dr[0]);
-               }
-               dr.Close();
+             OracleCommand cmd2 = new OracleCommand();
+              cmd2.Connection = conn;
+              cmd2.CommandText = "GetCoachID";
+              cmd2.CommandType = CommandType.StoredProcedure;
+              cmd2.Parameters.Add("coach_id", OracleDbType.RefCursor, ParameterDirection.Output);
+              dr = cmd2.ExecuteReader();
+              while (dr.Read())
+              {
+                  coachID_cb.Items.Add(dr[0]);
+              }
+            dr.Close();
         }
 
         private void addTeam_btn_Click(object sender, EventArgs e)
@@ -348,7 +348,9 @@ namespace Sport_club_IS
 
         private void logout_btn_Click(object sender, EventArgs e)
         {
-
+            coachOptions_Panel.Visible = false;
+            Login_Panel.Visible = true;
+            userId = -1;
         }
 
         private void logIn_btn_Click(object sender, EventArgs e)
@@ -383,10 +385,9 @@ namespace Sport_club_IS
                     cmd.Parameters.Add("inputId", ID_txt.Text);
                     cmd.Parameters.Add("pass", pass_txt.Text);
                     cmd.Parameters.Add("outputID", OracleDbType.Int32, ParameterDirection.Output);
-                    try
+                   try
                     {
                         cmd.ExecuteNonQuery();
-
                         userId = Convert.ToInt32(cmd.Parameters["outputID"].Value.ToString());
                     }
                     catch
@@ -397,16 +398,18 @@ namespace Sport_club_IS
                         MessageBox.Show("Incorrect data");
                     else
                     {
-                        if (coach_rb.Checked)
+                        if(coach_rb.Checked)
                         {
-                            coachOptions_Panel.Visible = true;
                             Login_Panel.Visible = false;
+                            coachOptions_Panel.Visible = true;
                         }
                         else if(player_rb.Checked)
                         {
-
+                            Login_Panel.Visible = false;
+                            //TODO PUT PLAYER PANEL
                         }
                     }
+                    
                 }
             }
            
@@ -416,7 +419,6 @@ namespace Sport_club_IS
         {
             choicesPanel.Visible = false;
             Login_Panel.Visible = true;
-            userId = -1;
         }
     }
 }

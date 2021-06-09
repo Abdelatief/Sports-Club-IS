@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.UpdatePanal = new System.Windows.Forms.Panel();
+            this.search_btn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.sportName_txt = new System.Windows.Forms.TextBox();
+            this.back_btn = new System.Windows.Forms.Button();
             this.save_btn = new System.Windows.Forms.Button();
             this.Informations_DGV = new System.Windows.Forms.DataGridView();
-            this.LoadInformation_btn = new System.Windows.Forms.Button();
             this.UpdateGB = new System.Windows.Forms.GroupBox();
             this.competitionsInformationRB = new System.Windows.Forms.RadioButton();
             this.TeamsInformationRB = new System.Windows.Forms.RadioButton();
             this.TrainingsInformationRB = new System.Windows.Forms.RadioButton();
-            this.back_btn = new System.Windows.Forms.Button();
-            this.sportName_txt = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.search_btn = new System.Windows.Forms.Button();
+            this.LoadInformation_btn = new System.Windows.Forms.Button();
             this.UpdatePanal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Informations_DGV)).BeginInit();
             this.UpdateGB.SuspendLayout();
@@ -58,6 +58,42 @@
             this.UpdatePanal.Name = "UpdatePanal";
             this.UpdatePanal.Size = new System.Drawing.Size(698, 588);
             this.UpdatePanal.TabIndex = 9;
+            // 
+            // search_btn
+            // 
+            this.search_btn.Location = new System.Drawing.Point(459, 161);
+            this.search_btn.Name = "search_btn";
+            this.search_btn.Size = new System.Drawing.Size(147, 28);
+            this.search_btn.TabIndex = 7;
+            this.search_btn.Text = "Search";
+            this.search_btn.UseVisualStyleBackColor = true;
+            this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(400, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 17);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Sport Name";
+            // 
+            // sportName_txt
+            // 
+            this.sportName_txt.Location = new System.Drawing.Point(489, 87);
+            this.sportName_txt.Name = "sportName_txt";
+            this.sportName_txt.Size = new System.Drawing.Size(145, 22);
+            this.sportName_txt.TabIndex = 5;
+            // 
+            // back_btn
+            // 
+            this.back_btn.Location = new System.Drawing.Point(46, 550);
+            this.back_btn.Name = "back_btn";
+            this.back_btn.Size = new System.Drawing.Size(75, 23);
+            this.back_btn.TabIndex = 4;
+            this.back_btn.Text = "Back";
+            this.back_btn.UseVisualStyleBackColor = true;
+            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
             // save_btn
             // 
@@ -79,16 +115,6 @@
             this.Informations_DGV.RowTemplate.Height = 24;
             this.Informations_DGV.Size = new System.Drawing.Size(615, 284);
             this.Informations_DGV.TabIndex = 2;
-            // 
-            // LoadInformation_btn
-            // 
-            this.LoadInformation_btn.Location = new System.Drawing.Point(52, 134);
-            this.LoadInformation_btn.Name = "LoadInformation_btn";
-            this.LoadInformation_btn.Size = new System.Drawing.Size(155, 28);
-            this.LoadInformation_btn.TabIndex = 1;
-            this.LoadInformation_btn.Text = "Load Information";
-            this.LoadInformation_btn.UseVisualStyleBackColor = true;
-            this.LoadInformation_btn.Click += new System.EventHandler(this.LoadInformation_btn_Click);
             // 
             // UpdateGB
             // 
@@ -134,41 +160,15 @@
             this.TrainingsInformationRB.Text = "Trainings information";
             this.TrainingsInformationRB.UseVisualStyleBackColor = true;
             // 
-            // back_btn
+            // LoadInformation_btn
             // 
-            this.back_btn.Location = new System.Drawing.Point(46, 550);
-            this.back_btn.Name = "back_btn";
-            this.back_btn.Size = new System.Drawing.Size(75, 23);
-            this.back_btn.TabIndex = 4;
-            this.back_btn.Text = "Back";
-            this.back_btn.UseVisualStyleBackColor = true;
-            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
-            // 
-            // sportName_txt
-            // 
-            this.sportName_txt.Location = new System.Drawing.Point(489, 87);
-            this.sportName_txt.Name = "sportName_txt";
-            this.sportName_txt.Size = new System.Drawing.Size(145, 22);
-            this.sportName_txt.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(400, 92);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 17);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Sport Name";
-            // 
-            // search_btn
-            // 
-            this.search_btn.Location = new System.Drawing.Point(459, 161);
-            this.search_btn.Name = "search_btn";
-            this.search_btn.Size = new System.Drawing.Size(147, 28);
-            this.search_btn.TabIndex = 7;
-            this.search_btn.Text = "Search";
-            this.search_btn.UseVisualStyleBackColor = true;
-            this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
+            this.LoadInformation_btn.Location = new System.Drawing.Point(52, 134);
+            this.LoadInformation_btn.Name = "LoadInformation_btn";
+            this.LoadInformation_btn.Size = new System.Drawing.Size(155, 28);
+            this.LoadInformation_btn.TabIndex = 1;
+            this.LoadInformation_btn.Text = "Load Information";
+            this.LoadInformation_btn.UseVisualStyleBackColor = true;
+            this.LoadInformation_btn.Click += new System.EventHandler(this.LoadInformation_btn_Click);
             // 
             // DMForm
             // 

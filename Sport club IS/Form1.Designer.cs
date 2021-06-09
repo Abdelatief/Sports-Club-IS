@@ -67,6 +67,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.choicesPanel = new System.Windows.Forms.Panel();
+            this.adminLogout_btn = new System.Windows.Forms.Button();
             this.AddCoach_btn = new System.Windows.Forms.Button();
             this.AddTraining_btn = new System.Windows.Forms.Button();
             this.newTeam_btn = new System.Windows.Forms.Button();
@@ -85,20 +86,19 @@
             this.TeamDGV = new System.Windows.Forms.DataGridView();
             this.label19 = new System.Windows.Forms.Label();
             this.coachOptions_Panel = new System.Windows.Forms.Panel();
-            this.coachProfile_btn = new System.Windows.Forms.Button();
-            this.restPass_btn = new System.Windows.Forms.Button();
             this.logout_btn = new System.Windows.Forms.Button();
+            this.restPass_btn = new System.Windows.Forms.Button();
+            this.coachProfile_btn = new System.Windows.Forms.Button();
             this.Login_Panel = new System.Windows.Forms.Panel();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.ID_txt = new System.Windows.Forms.TextBox();
-            this.pass_txt = new System.Windows.Forms.TextBox();
-            this.logIn_btn = new System.Windows.Forms.Button();
-            this.adminLogout_btn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Admin_rb = new System.Windows.Forms.RadioButton();
-            this.coach_rb = new System.Windows.Forms.RadioButton();
             this.player_rb = new System.Windows.Forms.RadioButton();
+            this.coach_rb = new System.Windows.Forms.RadioButton();
+            this.Admin_rb = new System.Windows.Forms.RadioButton();
+            this.logIn_btn = new System.Windows.Forms.Button();
+            this.pass_txt = new System.Windows.Forms.TextBox();
+            this.ID_txt = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.addTrainingPanel.SuspendLayout();
             this.addcoachPanel.SuspendLayout();
             this.addTeamPanel.SuspendLayout();
@@ -497,6 +497,16 @@
             this.choicesPanel.Size = new System.Drawing.Size(698, 464);
             this.choicesPanel.TabIndex = 21;
             // 
+            // adminLogout_btn
+            // 
+            this.adminLogout_btn.Location = new System.Drawing.Point(273, 370);
+            this.adminLogout_btn.Name = "adminLogout_btn";
+            this.adminLogout_btn.Size = new System.Drawing.Size(164, 41);
+            this.adminLogout_btn.TabIndex = 4;
+            this.adminLogout_btn.Text = "Log out";
+            this.adminLogout_btn.UseVisualStyleBackColor = true;
+            this.adminLogout_btn.Click += new System.EventHandler(this.adminLogout_btn_Click);
+            // 
             // AddCoach_btn
             // 
             this.AddCoach_btn.Location = new System.Drawing.Point(273, 210);
@@ -681,15 +691,15 @@
             this.coachOptions_Panel.Size = new System.Drawing.Size(695, 533);
             this.coachOptions_Panel.TabIndex = 5;
             // 
-            // coachProfile_btn
+            // logout_btn
             // 
-            this.coachProfile_btn.Location = new System.Drawing.Point(248, 78);
-            this.coachProfile_btn.Name = "coachProfile_btn";
-            this.coachProfile_btn.Size = new System.Drawing.Size(203, 47);
-            this.coachProfile_btn.TabIndex = 0;
-            this.coachProfile_btn.Text = "Profile";
-            this.coachProfile_btn.UseVisualStyleBackColor = true;
-            this.coachProfile_btn.Click += new System.EventHandler(this.coachProfile_btn_Click);
+            this.logout_btn.Location = new System.Drawing.Point(248, 305);
+            this.logout_btn.Name = "logout_btn";
+            this.logout_btn.Size = new System.Drawing.Size(203, 47);
+            this.logout_btn.TabIndex = 2;
+            this.logout_btn.Text = "Log Out";
+            this.logout_btn.UseVisualStyleBackColor = true;
+            this.logout_btn.Click += new System.EventHandler(this.logout_btn_Click);
             // 
             // restPass_btn
             // 
@@ -701,15 +711,15 @@
             this.restPass_btn.UseVisualStyleBackColor = true;
             this.restPass_btn.Click += new System.EventHandler(this.restPass_btn_Click);
             // 
-            // logout_btn
+            // coachProfile_btn
             // 
-            this.logout_btn.Location = new System.Drawing.Point(248, 305);
-            this.logout_btn.Name = "logout_btn";
-            this.logout_btn.Size = new System.Drawing.Size(203, 47);
-            this.logout_btn.TabIndex = 2;
-            this.logout_btn.Text = "Log Out";
-            this.logout_btn.UseVisualStyleBackColor = true;
-            this.logout_btn.Click += new System.EventHandler(this.logout_btn_Click);
+            this.coachProfile_btn.Location = new System.Drawing.Point(248, 78);
+            this.coachProfile_btn.Name = "coachProfile_btn";
+            this.coachProfile_btn.Size = new System.Drawing.Size(203, 47);
+            this.coachProfile_btn.TabIndex = 0;
+            this.coachProfile_btn.Text = "Profile";
+            this.coachProfile_btn.UseVisualStyleBackColor = true;
+            this.coachProfile_btn.Click += new System.EventHandler(this.coachProfile_btn_Click);
             // 
             // Login_Panel
             // 
@@ -724,59 +734,6 @@
             this.Login_Panel.Size = new System.Drawing.Size(695, 487);
             this.Login_Panel.TabIndex = 11;
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(139, 124);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(21, 17);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "ID";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(139, 229);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(69, 17);
-            this.label22.TabIndex = 1;
-            this.label22.Text = "Password";
-            // 
-            // ID_txt
-            // 
-            this.ID_txt.Location = new System.Drawing.Point(370, 118);
-            this.ID_txt.Name = "ID_txt";
-            this.ID_txt.Size = new System.Drawing.Size(139, 22);
-            this.ID_txt.TabIndex = 2;
-            // 
-            // pass_txt
-            // 
-            this.pass_txt.Location = new System.Drawing.Point(370, 221);
-            this.pass_txt.Name = "pass_txt";
-            this.pass_txt.PasswordChar = '*';
-            this.pass_txt.Size = new System.Drawing.Size(139, 22);
-            this.pass_txt.TabIndex = 3;
-            // 
-            // logIn_btn
-            // 
-            this.logIn_btn.Location = new System.Drawing.Point(272, 387);
-            this.logIn_btn.Name = "logIn_btn";
-            this.logIn_btn.Size = new System.Drawing.Size(103, 31);
-            this.logIn_btn.TabIndex = 4;
-            this.logIn_btn.Text = "Log In";
-            this.logIn_btn.UseVisualStyleBackColor = true;
-            this.logIn_btn.Click += new System.EventHandler(this.logIn_btn_Click);
-            // 
-            // adminLogout_btn
-            // 
-            this.adminLogout_btn.Location = new System.Drawing.Point(273, 370);
-            this.adminLogout_btn.Name = "adminLogout_btn";
-            this.adminLogout_btn.Size = new System.Drawing.Size(164, 41);
-            this.adminLogout_btn.TabIndex = 4;
-            this.adminLogout_btn.Text = "Log out";
-            this.adminLogout_btn.UseVisualStyleBackColor = true;
-            this.adminLogout_btn.Click += new System.EventHandler(this.adminLogout_btn_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.player_rb);
@@ -787,6 +744,26 @@
             this.groupBox1.Size = new System.Drawing.Size(367, 49);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
+            // 
+            // player_rb
+            // 
+            this.player_rb.AutoSize = true;
+            this.player_rb.Location = new System.Drawing.Point(257, 18);
+            this.player_rb.Name = "player_rb";
+            this.player_rb.Size = new System.Drawing.Size(69, 21);
+            this.player_rb.TabIndex = 2;
+            this.player_rb.Text = "Player";
+            this.player_rb.UseVisualStyleBackColor = true;
+            // 
+            // coach_rb
+            // 
+            this.coach_rb.AutoSize = true;
+            this.coach_rb.Location = new System.Drawing.Point(130, 18);
+            this.coach_rb.Name = "coach_rb";
+            this.coach_rb.Size = new System.Drawing.Size(69, 21);
+            this.coach_rb.TabIndex = 1;
+            this.coach_rb.Text = "Coach";
+            this.coach_rb.UseVisualStyleBackColor = true;
             // 
             // Admin_rb
             // 
@@ -800,39 +777,62 @@
             this.Admin_rb.Text = "Admin";
             this.Admin_rb.UseVisualStyleBackColor = true;
             // 
-            // coach_rb
+            // logIn_btn
             // 
-            this.coach_rb.AutoSize = true;
-            this.coach_rb.Location = new System.Drawing.Point(130, 18);
-            this.coach_rb.Name = "coach_rb";
-            this.coach_rb.Size = new System.Drawing.Size(69, 21);
-            this.coach_rb.TabIndex = 1;
-            this.coach_rb.Text = "Coach";
-            this.coach_rb.UseVisualStyleBackColor = true;
+            this.logIn_btn.Location = new System.Drawing.Point(272, 387);
+            this.logIn_btn.Name = "logIn_btn";
+            this.logIn_btn.Size = new System.Drawing.Size(103, 31);
+            this.logIn_btn.TabIndex = 4;
+            this.logIn_btn.Text = "Log In";
+            this.logIn_btn.UseVisualStyleBackColor = true;
+            this.logIn_btn.Click += new System.EventHandler(this.logIn_btn_Click);
             // 
-            // player_rb
+            // pass_txt
             // 
-            this.player_rb.AutoSize = true;
-            this.player_rb.Location = new System.Drawing.Point(257, 18);
-            this.player_rb.Name = "player_rb";
-            this.player_rb.Size = new System.Drawing.Size(69, 21);
-            this.player_rb.TabIndex = 2;
-            this.player_rb.Text = "Player";
-            this.player_rb.UseVisualStyleBackColor = true;
+            this.pass_txt.Location = new System.Drawing.Point(370, 221);
+            this.pass_txt.Name = "pass_txt";
+            this.pass_txt.PasswordChar = '*';
+            this.pass_txt.Size = new System.Drawing.Size(139, 22);
+            this.pass_txt.TabIndex = 3;
+            // 
+            // ID_txt
+            // 
+            this.ID_txt.Location = new System.Drawing.Point(370, 118);
+            this.ID_txt.Name = "ID_txt";
+            this.ID_txt.Size = new System.Drawing.Size(139, 22);
+            this.ID_txt.TabIndex = 2;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(139, 229);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(69, 17);
+            this.label22.TabIndex = 1;
+            this.label22.Text = "Password";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(139, 124);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(21, 17);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "ID";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 583);
+            this.Controls.Add(this.addTeamPanel);
+            this.Controls.Add(this.addTrainingPanel);
             this.Controls.Add(this.coachOptions_Panel);
             this.Controls.Add(this.coachProfilePanel);
             this.Controls.Add(this.CoachUpdatePanel);
             this.Controls.Add(this.addcoachPanel);
             this.Controls.Add(this.choicesPanel);
             this.Controls.Add(this.Login_Panel);
-            this.Controls.Add(this.addTeamPanel);
-            this.Controls.Add(this.addTrainingPanel);
             this.Name = "Form1";
             this.Text = "Sport Club Information System";
             this.addTrainingPanel.ResumeLayout(false);
